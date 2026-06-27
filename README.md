@@ -1,40 +1,98 @@
-# PulseDesk -- Forge 2 / Edition 1  (rename this repo: forge2-<yourname>)
+# \# PulseDesk
 
-A multi-tenant support-desk SaaS, BUILT BY ORCHESTRATING Hermes + OpenClaw over Slack.
-This is a STARTER SKELETON -- structure only, zero features. Build the features with your agents.
+# 
 
-## Stack (required)
-Laravel 11 . PHP 8.2 . MySQL 8 . Laravel Sanctum . React 19 . Vite . Tailwind
+# A multi-tenant support desk SaaS built with the Eean multi-agent methodology.
 
-## EastRouter models I used
-- Hermes (planning / product owner): <e.g. deepseek/deepseek-v4-pro>
-- OpenClaw (coding): <e.g. z-ai/glm-5.1>
+# 
 
-## How to run  (EXACT -- a judge will run these from a fresh clone)
-### Backend (Laravel + MySQL)
-    cd backend
-    cp .env.example .env          # set DB_* for your MySQL
-    composer install
-    php artisan key:generate
-    php artisan migrate --seed
-    php artisan serve             # http://127.0.0.1:8000
-### Frontend (React + Vite)
-    cd frontend
-    cp .env.example .env          # set VITE_API_URL=http://127.0.0.1:8000
-    npm install
-    npm run dev                   # http://127.0.0.1:5173
+# \## Stack
 
-## Demo logins (from the seeder)  -- fill in after you build the seeder
-- admin@acme.test / password
-- agent@acme.test / password
-- customer@acme.test / password
+# \- Backend: Laravel 11 + Sanctum
 
-## Live URL
-<paste if deployed, else: "runs locally per the steps above">
+# \- Frontend: React 19 + Vite + Tailwind
 
-## Where my evidence lives (everything is in THIS repo -- no Drive, no video)
-- agents/        -- real Hermes + OpenClaw configs (secrets redacted)
-- agent-log.md   -- the human->Hermes->OpenClaw loop
-- sprints/       -- one doc per sprint
-- slack-export/  -- Slack export, or per-channel screenshots
-- evidence/screenshots/ -- app, agents-running, CI screenshots
+# \- Database: MySQL 8
+
+# \- Tests: Pest/PHPUnit
+
+# \- CI: GitHub Actions
+
+# 
+
+# \## Agent Architecture
+
+# \- \*\*Hermes\*\* (orchestrator): z-ai/glm-4.5-air via EastRouter — plans tasks, assigns to OpenClaw
+
+# \- \*\*OpenClaw\*\* (executor): z-ai/glm-4.7 via EastRouter — writes code, runs commands, reports back
+
+# \- \*\*Slack\*\*: communication backbone — all tasks assigned and reported via Slack channels
+
+# \- \*\*Human\*\*: reviews and approves in #human-review before every merge
+
+# 
+
+# \## Run Steps
+
+# ```bash
+
+# \# Backend
+
+# cd backend
+
+# composer install --ignore-platform-reqs
+
+# cp .env.example .env
+
+# \# Set DB\_DATABASE=pulsedesk DB\_USERNAME=root DB\_PASSWORD=yourpassword
+
+# php artisan key:generate
+
+# php artisan migrate --seed
+
+# php artisan serve
+
+# 
+
+# \# Frontend
+
+# cd frontend
+
+# npm install
+
+# npm run dev
+
+# ```
+
+# 
+
+# \## Features
+
+# \- Multi-tenancy (tenant isolation via global scope)
+
+# \- Roles: admin / agent / customer
+
+# \- Ticket CRUD with filters and search
+
+# \- Threaded replies
+
+# \- Seeded demo data
+
+# \- GitHub Actions CI
+
+# 
+
+# \## Models Used
+
+# \- Hermes: z-ai/glm-4.5-air (EastRouter)
+
+# \- OpenClaw: z-ai/glm-4.7 (EastRouter)
+
+# 
+
+# \## Sprints Run
+
+# \- Sprint 1: Backend core (migrations, auth, tickets, seeders)
+
+# \- Sprint 2: Frontend (React, Login, Dashboard)
+
