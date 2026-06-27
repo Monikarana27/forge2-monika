@@ -53,4 +53,19 @@ class User extends Authenticatable
     {
         return $this->hasMany(Reply::class);
     }
+
+    public function scopeAgent($query)
+    {
+        return $query->where('role', 'agent');
+    }
+
+    public function scopeAdmin($query)
+    {
+        return $query->where('role', 'admin');
+    }
+
+    public function scopeCustomer($query)
+    {
+        return $query->where('role', 'customer');
+    }
 }

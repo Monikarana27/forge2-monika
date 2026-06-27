@@ -1,20 +1,22 @@
-# Agent log -- the human -> Hermes -> OpenClaw loop
+# \## Sprint 1 - 27 June 2026
 
-> Keep this real and in order. One block per meaningful exchange. Do NOT template/fake it.
+# \- \[13:00] Hermes configured, responding in #agent-orchestrator
 
-## Sprint 01
-### Plan (you -> Hermes, #sprint-main)
-You: @Hermes goal for sprint 1 is ... Plan tickets + assign to OpenClaw before any code.
-Hermes: Sprint plan: [issue 1...], [issue 2...]. Assigning issue 1 to @OpenClaw.
+# \- \[14:00] OpenClaw configured, responding in #agent-coder  
 
-### Build (Hermes -> OpenClaw in #agent-coder, report in #agent-log)
-OpenClaw:
-- What I Did: ...
-- What's Left: ...
-- What Needs Your Call: ...
+# \- \[15:00] Laravel 11 scaffolded via OpenClaw
 
-### Review & merge (you, #human-review)
-You: Reviewed PR #1, ran it, merged to main.
+# \- \[15:30] Migrations created and run successfully
 
-## Sprint 02
-...
+# \- \[16:00] Auth + Roles built (register/login/logout)
+
+# \- \[16:30] Ticket system + multi-tenancy built
+
+# \- \[17:00] Seeders run - demo data populated
+
+# \- \[17:10] Tests being written by OpenClaw
+
+# Human approvals: all tasks reviewed before commit
+
+# Models: Hermes=z-ai/glm-4.5-air, OpenClaw=z-ai/glm-4.7
+
